@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>凤隐阁</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/zyx_theme.min.css" />
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.rankimg {
+				height: 30px;
+				margin: 10px;
+			}
+			
+			 .rankul li {
+				height: 50px;
+			}
+			
+			.ui-listview>.ui-li-has-thumb>.ui-btn,
+			.ui-listview>.ui-li-static.ui-li-has-thumb {
+				min-height: 1.2em;
+			}
+			
+			.listh {
+				margin: 1em 0 1em 1em;
+				font-weight: bold;
+				color: darkorange;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				$(".nan_gengduopaihang,.nv_gengduopaihang").css({
+					'display': 'none',
+					'text-indent': '2em',
+					'font-size': '0.8em',
+					'color': '#555',
+					'height': '1.5em',
+					'line-height': '1.5em'
+				});
+
+				htmlobj = $.ajax({
+					url: "tool.html",
+					async: false
+				});
+				$("[data-role='footer']").html(htmlobj.responseText);
+				$('[data-role="navbar"]').navbar();
+
+				meobj = $.ajax({
+					url: "me.html",
+					async: false
+				});
+				$("#me").html(meobj.responseText);
+
+				$("#nan_gengduopaihang").click(function() {
+					if($(".nan_gengduopaihang").css("display") == "none") {
+						$(".nan_gengduopaihang").show(1000);
+					} else {
+						$(".nan_gengduopaihang").hide(1000);
+					}
+				});
+				$("#nv_gengduopaihang").click(function() {
+					if($(".nv_gengduopaihang").css("display") == "none") {
+						$(".nv_gengduopaihang").show(1000);
+					} else {
+						$(".nv_gengduopaihang").hide(1000);
+					}
+				});
+				$("*").removeClass("ui-btn-icon-right");
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div data-role="page" id="index">
+			<div data-role="header" data-position="fixed" data-id="ca-travel">
+				<a href="#me" data-role="button" data-icon="user" data-iconpos="notext"></a>
+				<center style="line-height: 45px;">排行榜</center>
+				<a href="search.html" class="btn ui-btn-right" data-icon="search" data-iconpos="notext">搜索</a>
+			</div>
+
+			<div data-role="panel" id="me"></div>
+
+			<div data-role="content" role="main">
+
+				<ul data-role="listview" class="rankul">
+					<p data-role="listdivider" class="listh">男生 </p>
+					<li>
+						<a href="rankinfo.html#zb" data-transition="pop" data-ajax="false"><img src="img/rank/zuirebang.png" class="rankimg" />
+							<p class="title">最热榜Top10</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/rank/wanjiebang.png" class="rankimg" />
+							<p class="title">完结榜Top10</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/rank/shoucangbang.png" class="rankimg">
+							<p class="title">收藏榜Top10</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/rank/tuijianbang.png" class="rankimg">
+							<p class="title">推荐榜Top10</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/rank/xinshubang.png" class="rankimg">
+							<p class="title">新书榜Top10</p>
+						</a>
+					</li>
+					<li id="nan_gengduopaihang">
+						<a href="#i" data-transition="pop">
+							<img src="img/rank/gengduopaihang.png" class="rankimg">
+							<p class="title">更多排行</p>
+						</a>
+					</li>
+					<li class="nan_gengduopaihang">
+						纵横排行榜
+					</li>
+					<li class="nan_gengduopaihang">
+						逐浪排行榜
+					</li>
+					<li class="nan_gengduopaihang">
+						起点排行榜
+					</li>
+				</ul>
+				<br />
+				<ul data-role="listview" class="rankul">
+					<p data-role="listdivider" class="listh" style="margin-top:2em">女生 </p>
+					<li>
+						<a href="rankinfo.html" data-transition="pop" data-ajax="false"><img src="img/rank/zuirebang.png" class="rankimg" />
+							<p class="title">最热榜Top10</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/rank/wanjiebang.png" class="rankimg" />
+							<p class="title">完结榜Top10</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/rank/shoucangbang.png" class="rankimg">
+							<p class="title">收藏榜Top10</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/rank/tuijianbang.png" class="rankimg">
+							<p class="title">推荐榜Top10</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/rank/xinshubang.png" class="rankimg">
+							<p class="title">新书榜Top10</p>
+						</a>
+					</li>
+					<li id="nv_gengduopaihang">
+						<a href="#i" data-transition="pop">
+							<img src="img/rank/gengduopaihang.png" class="rankimg">
+							<p class="title">更多排行</p>
+						</a>
+					</li>
+					<li class="nv_gengduopaihang">
+						纵横排行榜
+					</li>
+					<li class="nv_gengduopaihang">
+						逐浪排行榜
+					</li>
+					<li class="nv_gengduopaihang">
+						起点排行榜
+					</li>
+				</ul>
+			</div><br /><br /><br />
+			<div data-role="footer" data-position="fixed" data-id="ca-travel">
+			</div>
+		</div>
+	</body>
+
+</html>

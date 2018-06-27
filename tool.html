@@ -1,0 +1,53 @@
+<style type="text/css">
+	.ui-icon-cate:after {
+		background-image: url("img/tool/分类.png");
+		background-size: 16px 16px;
+	}
+	.ui-icon-shelf:after {
+		background-image: url("img/tool/书架.png");
+		background-size: 16px 16px;
+	}
+	.ui-icon-rank:after {
+		background-image: url("img/tool/排行榜.png");
+		background-size: 20px 20px;
+	}
+</style>
+<script type="text/javascript">
+	$(function() {
+		var url = window.location.href.substr(window.location.href.lastIndexOf('/') + 1)
+		if(url == 'index.html') {
+			$("a").removeClass('ui-btn-active');
+			$("a[href='index.html']").addClass('ui-btn-active');
+		}
+		if(url == 'category.html') {
+			$("a").removeClass('ui-btn-active');
+			$("a[href='category.html']").addClass('ui-btn-active');
+		}
+		if(url == 'bookshelf.html') {
+			$("a").removeClass('ui-btn-active');
+			$("a[href='bookshelf.html']").addClass('ui-btn-active');
+		}
+		if(url == 'rank.html' || url == 'rankinfo.html') {
+			$("a").removeClass('ui-btn-active');
+			$("a[href='rank.html']").addClass('ui-btn-active');
+		}
+
+	});
+</script>
+
+<div data-role="navbar">
+	<ul>
+		<li>
+			<a href="index.html" data-icon="home" data-ajax="false">首页</a>
+		</li>
+		<li>
+			<a href="category.html" data-icon="cate" data-ajax="false">分类</a>
+		</li>
+		<li>
+			<a href="bookshelf.html" data-icon="shelf" data-ajax="false">书架</a>
+		</li>
+		<li>
+			<a href="rank.html" data-icon="rank" data-ajax="false">排行榜</a>
+		</li>
+	</ul>
+</div>

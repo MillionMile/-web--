@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>凤隐阁</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/zyx_theme.min.css" />
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.toolimg {
+				width: 2em;
+				margin: 5px;
+			}
+			
+			.toolbottomimg {
+				width: 5em;
+			}
+			
+			.tool-a {
+				text-decoration: none;
+				text-align: center;
+			}
+			
+			.shijianchuo {
+				float: right;
+				color: grey;
+				font-size: 0.8em;
+			}
+			
+			
+			
+			.pinglun {
+				padding: 0 1em;
+				font-size: 0.9em;
+				line-height: 1.5em;
+				margin-top: 1em;
+			}
+			
+			.xieguo {
+				padding: 0 1em;
+				font-size: 1em;
+			}
+			
+			.pinglun img {
+				width: 1.5em;
+			}
+			
+			.listimg {
+				height: 100%;
+				margin: 5px;
+			}
+			
+			.grid-a {
+				font-size: 0.8em;
+				text-decoration: none;
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(function() {
+				htmlobj = $.ajax({
+					url: "tool.html",
+					async: false
+				});
+				$("[data-role='footer']").html(htmlobj.responseText);
+				$('[data-role="navbar"]').navbar();
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div data-role="page" data-theme="a">
+			<div data-role="header" class="header" data-position="fixed" data-id="ca-travel" data-theme="a">
+				<a data-rel="back" data-role="button" data-icon="back" data-iconpos="notext" data-ajax="false"></a>
+				<center style="line-height: 45px;">书籍详情</center>
+				<a href="search.html" class="btn ui-btn-right" data-icon="search" data-iconpos="notext" data-ajax="false">搜索</a>
+			</div>
+			<div data-role="content">
+				<div class="ui-grid-a my-ui-grid-a">
+					<div class="ui-block-a">
+						<img src="img/index/圣墟.jpg" width="90%" />
+					</div>
+					<div class="ui-block-b">
+						<h3>圣墟</h3>
+						<p>作者：辰东 </p>
+						<p></p>更新：2017/12/12</p>
+						<p>类型：玄幻奇幻</p>
+					</div>
+				</div>
+
+				<div class="ui-grid-b">
+					<div class="ui-block-a">
+						<a href="read.html" data-ajax="false" data-role="button" data-mini="true" class='ui-btn-active'>立即阅读</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#" data-ajax="false" data-role="button" data-mini="true">移除书架</a>
+					</div>
+					<div class="ui-block-c">
+						<a href="#" data-ajax="false" data-role="button" data-mini="true">全本缓存</a>
+					</div>
+
+				</div>
+				<div class="ui-grid-c" style="margin:1em 0 2em 0">
+					<div class="ui-block-a">
+						<a href="#" class="tool-a">
+							<center><img src="img/bookinfo/推荐.png" class="toolimg" /><br /> 推荐
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#" class="tool-a">
+							<center><img src="img/bookinfo/分享.png" class="toolimg" /><br /> 分享
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-c">
+						<a href="#" class="tool-a">
+							<center><img src="img/bookinfo/报错.png" class="toolimg" /><br /> 报错
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-d">
+						<a href="#" class="tool-a">
+							<center><img src="img/bookinfo/评论.png" class="toolimg" /><br /> 评论
+							</center>
+						</a>
+					</div>
+				</div>
+				<div>
+					<ul data-role="listview">
+						<li>
+							<a href="#" style="display: block;line-height: 1.5em;">
+								<span>目录 最近更新</span><span class="shijianchuo">2017/12/12 23:40:10</span><br />
+								<span style="color:grey;font-size: 0.8em;">第八百一十章 小舅子疯了</span>
+							</a>
+						</li>
+					</ul><br />
+					<p data-role="listdivider" class="listh"><span style="line-height: 1.5em;">作品简介</span><br />
+						<span style="color:grey;font-size: 0.8em;">在破败中崛起，在寂灭中复苏。<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地，时间的枷锁被打开了，一个全新的世界就此解开神秘的一角……</span>
+					</p>
+					<hr />
+					<div>
+						<p data-role="listdivider" class="listh"><span>用户评论</span>
+							<a style="float: right;font-size: 0.8em;">更多</a><br />
+						</p>
+						<div data-role="listdivider" class="listh pinglun">
+							<img src="img/me/头像.png" /><span>28f159c131f4140</span>
+							<span class="shijianchuo">2017-07-28</span><br /> 咋又断更了？
+						</div>
+						<div data-role="listdivider" class="listh pinglun">
+							<img src="img/me/头像.png" /><span>qq926878135</span>
+							<span class="shijianchuo">2017-07-28</span><br /> 东哥今天断更了
+						</div>
+						<div data-role="listdivider" class="listh pinglun">
+							<img src="img/me/头像.png" /><span>邪一生陨落</span>
+							<span class="shijianchuo">2017-07-28</span><br /> 作者加油！快点更新！
+						</div>
+						<div data-role="listdivider" class="listh pinglun">
+							<img src="img/me/头像.png" /><span>nf</span>
+							<span class="shijianchuo">2017-07-28</span><br /> 肾虚，有好虚
+						</div>
+					</div>
+					<hr />
+					<div>
+						<ul data-role="listview" class="xieguo">
+							<p data-role="listdivider" class="listh" style="margin-top:2em">辰东还写过
+							</p>
+							<li>
+								<a href="#i" data-transition="pop"><img src="img/bookinfo/完美世界.jpg" class="listimg" />
+									<p class="title">完美世界</p>
+									<p class="cate">作者 | 辰东</p>
+									<p class="description">[最新]我的新书《圣墟》已上传</p>
+								</a>
+							</li>
+							<li>
+								<a href="#ii"><img src="img/bookinfo/神墓.jpg" class="listimg" />
+									<p class="title">神墓</p>
+									<p class="cate">作者 | 辰东</p>
+									<p class="description">[最新]我的新书《圣墟》现已上传</p>
+								</a>
+							</li>
+							<li>
+								<a href="#iii"><img src="img/bookinfo/长生界.jpg" class="listimg" />
+									<p class="title">长生界</p>
+									<p class="cate">作者 | 辰东</p>
+									<p class="description">[最新]我的新书《圣墟》已上传</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<span style="display: inline-block;margin-top:2em">同类推荐</span>
+					<div class="ui-grid-c" style="margin:1em 0 0 0">
+						<div class="ui-block-a">
+							<a href="#" class="grid-a">
+								<center><img src="img/bookinfo/弑天刃.jpg" class="toolbottomimg" /><br /> 弑天刃
+								</center>
+							</a>
+						</div>
+						<div class="ui-block-b">
+							<a href="#" class="grid-a">
+								<center><img src="img/bookinfo/星河法令.jpg" class="toolbottomimg" /><br /> 星河法令
+								</center>
+							</a>
+						</div>
+						<div class="ui-block-c">
+							<a href="#" class="grid-a">
+								<center><img src="img/bookinfo/霸武神王.jpg" class="toolbottomimg" /><br /> 霸武神王
+								</center>
+							</a>
+						</div>
+						<div class="ui-block-d">
+							<a href="#" class="grid-a">
+								<center><img src="img/bookinfo/调戏诸天.jpg" class="toolbottomimg" /><br /> 调戏诸天
+								</center>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="ca-travel">
+			</div>
+		</div>
+	</body>
+
+</html>

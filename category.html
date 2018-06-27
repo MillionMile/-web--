@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/zyx_theme.min.css" />
+		<title>凤隐阁</title>
+		<script type="text/javascript">
+			$(function() {
+				$("th").css("display", "none");
+
+				$(".nan_gengduopaihang,.nv_gengduopaihang").css({
+					'display': 'none',
+					'text-indent': '2em',
+					'font-size': '0.8em',
+					'color': '#555'
+				});
+
+				htmlobj = $.ajax({
+					url: "tool.html",
+					async: false
+				});
+				$("[data-role='footer']").html(htmlobj.responseText);
+				$('[data-role="navbar"]').navbar();
+
+				meobj = $.ajax({
+					url: "me.html",
+					async: false
+				});
+				$("#me").html(meobj.responseText);
+
+			});
+		</script>
+		<style type="text/css">
+			td img {
+				width: 2em;
+				margin-right: 0.5em;
+				height: 2em;
+			}
+			
+			.tex {
+				position: relative;
+				left: 0;
+				top: -0.5em
+			}
+			.tex2{
+				position: relative;
+				top:0.4em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div data-role="page">
+			<div data-role="header" data-position="fixed" data-id="ca-travel">
+				<a href="#me" data-role="button" data-icon="user" data-iconpos="notext"></a>
+				<center style="line-height: 45px;">分类</center>
+				<a href="search.html" class="btn ui-btn-right" data-icon="search" data-iconpos="notext">搜索</a>
+			</div>
+
+			<div data-role="panel" id="me"></div>
+
+			<div data-role="content">
+				<table data-role="table" data-mode="columntoggle" class="ui-responsive" id="myTable" data-column-btn-text="点我显示或隐藏列!">
+					<thead>
+						<tr>
+							<th>类别</th>
+							<th data-priority="2">推荐阅读1</th>
+							<th data-priority="3">推荐阅读2</th>
+							<th data-priority="4">推荐阅读3</th>
+							<th data-priority="1">热度</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><img src="img/category/男生爱看.png" /><span class="tex">男生爱看</span></td>
+							<td>
+								<a href="#"><span class="tex2">一念永恒</span></span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">圣墟</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">我是至尊</span></a>
+							</td>
+							<td><span class="tex2">153658</span></td>
+						</tr>
+						<tr>
+							<td><img src="img/category/女生爱看.png" /><span class="tex">女生爱看</span></td>
+							<td>
+								<a href="#"><span class="tex2">绝宠妖妃</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">隐婚100分</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">邪王追妻</span></a>
+							</td>
+							<td><span class="tex2">136582</span></td>
+						</tr>
+						<tr>
+							<td><img src="img/category/玄幻奇幻.png" /><span class="tex">玄幻奇幻</span></td>
+							<td>
+								<a href="#"><span class="tex2">校花的贴身高手</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">雪鹰领主</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">武炼巅峰</span></a>
+							</td>
+							<td><span class="tex2">58217</span></td>
+						</tr>
+						<tr>
+							<td><img src="img/category/武侠仙侠.png" /><span class="tex">武侠仙侠</span></td>
+							<td>
+								<a href="#"><span class="tex2">飞天</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">掠天记</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">不朽剑神</span></a>
+							</td>
+							<td><span class="tex2">20641</span></td>
+						</tr>
+						<tr>
+							<td><img src="img/category/都市言情.png" /><span class="tex">都市言情</span></td>
+							<td>
+								<a href="#"><span class="tex2">七界武神</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">超级兵王</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">极品全能学生</span></a>
+							</td>
+							<td><span class="tex2">28218</span></td>
+						</tr>
+						<tr>
+							<td><img src="img/category/历史军事.png" /><span class="tex">历史军事</span></td>
+							<td>
+								<a href="#"><span class="tex2">无敌天下</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">流氓艳遇记</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">最强兵王</span></a>
+							</td>
+							<td><span class="tex2">8222</span></td>
+						</tr>
+						<tr>
+							<td><img src="img/category/科幻灵异.png" /><span class="tex">科幻灵异</span></td>
+							<td>
+								<a href="#"><span class="tex2">茅山捉鬼人</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">人族训练场</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">麻衣神算子</span></a>
+							</td>
+							<td><span class="tex2">22508</span></td>
+						</tr>
+						<tr>
+							<td><img src="img/category/网游竞技.png" /><span class="tex">网游竞技</span></td>
+							<td>
+								<a href="#"><span class="tex2">网游之大盗贼</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">极品唐医</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">全职高手</span></a>
+							</td>
+							<td><span class="tex2">6082</span></td>
+						</tr>
+						<tr>
+							<td><img src="img/category/女生频道.png" /><span class="tex">女生频道</span></td>
+							<td>
+								<a href="#"><span class="tex2">神医嫡女</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">绝宠妖妃</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">鬼医圣手</span></a>
+							</td>
+							<td><span class="tex2">45628</span></td>
+						</tr>
+						<tr>
+							<td><img src="img/category/同人小说.png" /><span class="tex">同人小说</span></td>
+							<td>
+								<a href="#"><span class="tex2">始于火影</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">海贼王之妖术师</span></a>
+							</td>
+							<td>
+								<a href="#"><span class="tex2">火影之祸害</span></a>
+							</td>
+							<td><span class="tex2">3934</span></td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="ca-travel">
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

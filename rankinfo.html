@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>凤隐阁</title>
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/zyx_theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mycss.css" />
+		<script type="text/javascript">
+			$(function() {
+				$(".header").toolbar();
+				htmlobj = $.ajax({
+					url: "tool.html",
+					async: false
+				});
+				$("[data-role='footer']").html(htmlobj.responseText);
+				$('[data-role="navbar"]').navbar();
+				$("[data-role='footer']").toolbar();
+			});
+			$(document).on("pageshow", "#zb", function() {
+				$("#btn_zb").addClass('ui-btn-active');
+				$("#btn_yb").removeClass('ui-btn-active');
+				$("#btn_ab").removeClass('ui-btn-active');
+			});
+			$(document).on("pageshow", "#yb", function() {
+				$("#btn_yb").addClass('ui-btn-active');
+				$("#btn_zb").removeClass('ui-btn-active');
+				$("#btn_ab").removeClass('ui-btn-active');
+			});
+			$(document).on("pageshow", "#ab", function() {
+				$("#btn_ab").addClass('ui-btn-active');
+				$("#btn_zb").removeClass('ui-btn-active');
+				$("#btn_yb").removeClass('ui-btn-active');
+			});
+		</script>
+	</head>
+
+	<body>
+		<div data-role="header" class="header" data-position="fixed" data-id="ca-travel" data-theme="a">
+			<a data-rel="back" data-role="button" data-icon="back" data-iconpos="notext"></a>
+			<center style="line-height: 45px;">最热榜Top10</center>
+			<a href="search.html" class="btn ui-btn-right" data-icon="search" data-iconpos="notext" data-ajax="false">搜索</a>
+			<div data-role="navbar" id="navbar">
+				<ul>
+					<li>
+						<a id="btn_zb" href="#zb">周榜</a>
+					</li>
+					<li>
+						<a id="btn_yb" href="#yb">月榜</a>
+					</li>
+					<li>
+						<a id="btn_ab" href="#ab">总榜</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div data-role="page" id="zb">
+
+			<div data-role="content">
+				<ul data-role="listview" id="listmode">
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/替天行盗.jpg" class="listimg" />
+							<p class="title">替天行盗</p>
+							<p class="cate">作者： 石章鱼</p>
+							<p class="description">醒掌天下权，醉卧美人膝，五千年风华烟雨，是非成败转头空！</p>
+						</a>
+					</li>
+					<li>
+						<a href="bookinfo.html" data-ajax="false"><img src="img/index/圣墟.jpg" class="listimg" />
+							<p class="title">圣墟</p>
+							<p class="cate">玄幻奇幻 | 辰东</p>
+							<p class="description">在破败中崛起，在寂灭中复苏。 　　 沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地，世间的枷锁被打开了，一个全新的世界就此揭开神秘的一角……</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/太古神王.jpg" class="listimg" />
+							<p class="title">太古神王</p>
+							<p class="cate">作者： 净无痕</p>
+							<p class="description">九天大陆，天穹之上有九条星河，亿万星辰，皆为武命星辰，武道之人，可沟通星辰，觉醒星魂，成武命修士。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/我是至尊.jpg" class="listimg" />
+							<p class="title">我是至尊</p>
+							<p class="cate">作者：风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。九尊智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/神门.jpg" class="listimg" />
+							<p class="title">神门</p>
+							<p class="cate">作者： 薪意</p>
+							<p class="description">这是一个诡异莫名的世界……山，水，石，花，草，树，木，太阳，月亮，星辰……天地万物都是力量的来源。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/天影.jpg" class="listimg" />
+							<p class="title">天影</p>
+							<p class="cate">作者： 萧鼎</p>
+							<p class="description">阴阳分天地，五行定乾坤。天穹之下岁月沧桑的中土神州，正是仙道昌盛的时代</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/万界天尊.jpg" class="listimg" />
+							<p class="title">万界天尊</p>
+							<p class="cate">作者： 血红</p>
+							<p class="description">天为何物？高高在上，威严莫测，是法则，是戒律，是无情，是冷酷。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/我真是大明星.jpg" class="listimg" />
+							<p class="title">我真是大明星</p>
+							<p class="cate">作者： 尝谕</p>
+							<p class="description">经验值。 凭借这款游戏的帮助，我从一个小小的播音主持人做起一步步变成大明星了！</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/斗破苍穹.jpg" class="listimg" />
+							<p class="title">斗破苍穹</p>
+							<p class="cate">作者： 天蚕土豆</p>
+							<p class="description">这里是属于斗气的世界，没有花俏艳丽的魔法，有的，仅仅是繁衍到巅峰的斗气！</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/不朽凡人.jpg" class="listimg" />
+							<p class="title">不朽凡人</p>
+							<p class="cate">作者：鹅是老五</p>
+							<p class="description">我，只有凡根，一介凡人！　　 我，叫莫无忌！　　 我，要不朽！</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="page" id="yb">
+			<div data-role="content">
+				<ul data-role="listview" id="listmode">
+					<li>
+						<a href="bookinfo.html" data-ajax="false"><img src="img/index/圣墟.jpg" class="listimg" />
+							<p class="title">圣墟</p>
+							<p class="cate">作者：辰东</p>
+							<p class="description">在破败中崛起，在寂灭中复苏。 　　 沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地，世间的枷锁被打开了，一个全新的世界就此揭开神秘的一角……</p>
+						</a>
+					</li>
+
+					<li>
+						<a href="#ii"><img src="img/index/天影.jpg" class="listimg" />
+							<p class="title">天影</p>
+							<p class="cate">作者： 萧鼎</p>
+							<p class="description">阴阳分天地，五行定乾坤。天穹之下岁月沧桑的中土神州，正是仙道昌盛的时代</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/我是至尊.jpg" class="listimg" />
+							<p class="title">我是至尊</p>
+							<p class="cate">作者：风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。九尊智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/太古神王.jpg" class="listimg" />
+							<p class="title">太古神王</p>
+							<p class="cate">作者： 净无痕</p>
+							<p class="description">九天大陆，天穹之上有九条星河，亿万星辰，皆为武命星辰，武道之人，可沟通星辰，觉醒星魂，成武命修士。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/斗破苍穹.jpg" class="listimg" />
+							<p class="title">斗破苍穹</p>
+							<p class="cate">作者： 天蚕土豆</p>
+							<p class="description">这里是属于斗气的世界，没有花俏艳丽的魔法，有的，仅仅是繁衍到巅峰的斗气！</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/神门.jpg" class="listimg" />
+							<p class="title">神门</p>
+							<p class="cate">作者： 薪意</p>
+							<p class="description">这是一个诡异莫名的世界……山，水，石，花，草，树，木，太阳，月亮，星辰……天地万物都是力量的来源。</p>
+						</a>
+					</li>
+
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/替天行盗.jpg" class="listimg" />
+							<p class="title">替天行盗</p>
+							<p class="cate">作者： 石章鱼</p>
+							<p class="description">醒掌天下权，醉卧美人膝，五千年风华烟雨，是非成败转头空！</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/万界天尊.jpg" class="listimg" />
+							<p class="title">万界天尊</p>
+							<p class="cate">作者： 血红</p>
+							<p class="description">天为何物？高高在上，威严莫测，是法则，是戒律，是无情，是冷酷。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/不朽凡人.jpg" class="listimg" />
+							<p class="title">不朽凡人</p>
+							<p class="cate">作者：鹅是老五</p>
+							<p class="description">我，只有凡根，一介凡人！　　 我，叫莫无忌！　　 我，要不朽！</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/我真是大明星.jpg" class="listimg" />
+							<p class="title">我真是大明星</p>
+							<p class="cate">作者： 尝谕</p>
+							<p class="description">经验值。 凭借这款游戏的帮助，我从一个小小的播音主持人做起一步步变成大明星了！</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="page" id="ab">
+			<div data-role="content">
+				<ul data-role="listview" id="listmode">
+					<li>
+						<a href="#iii"><img src="img/index/我是至尊.jpg" class="listimg" />
+							<p class="title">我是至尊</p>
+							<p class="cate">作者：风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。九尊智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="bookinfo.html" data-ajax="false"><img src="img/index/圣墟.jpg" class="listimg" />
+							<p class="title">圣墟</p>
+							<p class="cate">作者：辰东</p>
+							<p class="description">在破败中崛起，在寂灭中复苏。 　　 沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地，世间的枷锁被打开了，一个全新的世界就此揭开神秘的一角……</p>
+						</a>
+					</li>
+
+					<li>
+						<a href="#ii"><img src="img/index/天影.jpg" class="listimg" />
+							<p class="title">天影</p>
+							<p class="cate">作者： 萧鼎</p>
+							<p class="description">阴阳分天地，五行定乾坤。天穹之下岁月沧桑的中土神州，正是仙道昌盛的时代</p>
+						</a>
+					</li>
+
+					<li>
+
+						<a href="#i" data-transition="pop"><img src="img/index/神门.jpg" class="listimg" />
+							<p class="title">神门</p>
+							<p class="cate">作者： 薪意</p>
+							<p class="description">这是一个诡异莫名的世界……山，水，石，花，草，树，木，太阳，月亮，星辰……天地万物都是力量的来源。</p>
+						</a>
+					</li>
+
+					<li>
+						<a href="#ii"><img src="img/index/太古神王.jpg" class="listimg" />
+							<p class="title">太古神王</p>
+							<p class="cate">作者： 净无痕</p>
+							<p class="description">九天大陆，天穹之上有九条星河，亿万星辰，皆为武命星辰，武道之人，可沟通星辰，觉醒星魂，成武命修士。</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/斗破苍穹.jpg" class="listimg" />
+							<p class="title">斗破苍穹</p>
+							<p class="cate">作者： 天蚕土豆</p>
+							<p class="description">这里是属于斗气的世界，没有花俏艳丽的魔法，有的，仅仅是繁衍到巅峰的斗气！</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/替天行盗.jpg" class="listimg" />
+							<p class="title">替天行盗</p>
+							<p class="cate">作者： 石章鱼</p>
+							<p class="description">醒掌天下权，醉卧美人膝，五千年风华烟雨，是非成败转头空！</p>
+						</a>
+					</li>
+
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/我真是大明星.jpg" class="listimg" />
+							<p class="title">我真是大明星</p>
+							<p class="cate">作者： 尝谕</p>
+							<p class="description">经验值。 凭借这款游戏的帮助，我从一个小小的播音主持人做起一步步变成大明星了！</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/万界天尊.jpg" class="listimg" />
+							<p class="title">万界天尊</p>
+							<p class="cate">作者： 血红</p>
+							<p class="description">天为何物？高高在上，威严莫测，是法则，是戒律，是无情，是冷酷。</p>
+						</a>
+					</li>
+				</ul>
+			<div data-role="footer" data-position="fixed" data-id="ca-travel" data-theme="a">
+			</div>
+		</div>
+	</body>
+
+</html>

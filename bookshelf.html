@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>凤隐阁</title>
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mycss.css"/>
+		<link rel="stylesheet" type="text/css" href="css/zyx_theme.min.css"/>
+		<style type="text/css">
+			.ui-icon-myicon:after {
+				background-image: url("css/images/icons-png/grid-white.png");
+				/**你的图片，路径是相对于当前使用文件可以访问到的*/
+				background-size: 18px 18px;
+				/*图标形态，0=方形，不设置就是默认的圆形*/
+			}
+			#shelfmode div{
+				margin:10px 0;
+			}
+			#shelfmode a{
+				text-decoration: none;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				htmlobj = $.ajax({
+					url: "tool.html",
+					async: false
+				});
+				$("[data-role='footer']").html(htmlobj.responseText);
+				$('[data-role="navbar"]').navbar();
+
+				meobj = $.ajax({
+					url: "me.html",
+					async: false
+				});
+				$("#me").html(meobj.responseText);
+
+				$('#mode').click(function() {
+					if($('#listmode').css("display") == "none") {
+						$('#listmode').show(0);
+						$("#sty").html('.ui-icon-myicon:after {background-image: url("css/images/icons-png/bars-white.png");background-size: 14px 14px;}');
+						$('#shelfmode').hide(0);
+					} else {
+						$('#shelfmode').show(0);
+						$("#sty").html('.ui-icon-myicon:after {background-image: url("css/images/icons-png/grid-white.png");background-size: 14px 14px;}');
+						$('#listmode').hide(0);
+					}
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<style type="text/css" id="sty">
+			.ui-icon-myicon:after {background-image: url("css/images/icons-png/grid-white.png");background-size: 14px 14px;}
+		</style>
+		<div data-role="page" id="index">
+			<div data-role="header" data-position="fixed" data-id="ca-travel">
+				<table width="100%">
+					<tr>
+						<td width="30px">
+							<a href="#me" data-role="button" data-icon="user" data-iconpos="notext"></a>
+						</td>
+						<td style="text-align: center;">书架</td>
+						<td width="30px">
+							<a href="search.html" data-role="button" data-icon="search" data-iconpos="notext"></a>
+						</td>
+						<td width="30px">
+							<a id="mode" href="#" data-role="button" data-icon="myicon" data-iconpos="notext"></a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div data-role="panel" id="me"></div>
+			<div data-role="content" role="main">
+				<div class="ui-grid-b" id="shelfmode">
+					<div class="ui-block-a">
+						<a href="bookinfo.html" data-ajax="false">
+							<center><img src="img/index/圣墟.jpg"  class="grid"/> <br /><span class="font">圣墟</span>
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#">
+							<center><img src="img/index/我是至尊.jpg"  class="grid"/> <br /><span class="font">我是至尊</span>
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-c">
+						<a href="#">
+							<center><img src="img/index/不朽凡人.jpg"  class="grid"/> <br /><span class="font">不朽凡人</span>
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-a">
+						<a href="#">
+							<center><img src="img/index/替天行盗.jpg"  class="grid"/> <br /><span class="font">替天行盗</span>
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#">
+							<center><img src="img/index/一念永恒.jpg"  class="grid"/> <br /><span class="font">一念永恒</span>
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-c">
+						<a href="#">
+							<center><img src="img/index/太古神王.jpg"  class="grid"/> <br /><span class="font">太古神王</span>
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-a">
+						<a href="#">
+							<center><img src="img/index/天影.jpg"  class="grid"/> <br /><span class="font">天影</span>
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#">
+							<center><img src="img/index/剑灵同居日记.jpg"  class="grid"/> <br /><span class="font">剑灵同居日记</span>
+							</center>
+						</a>
+					</div>
+					<div class="ui-block-c">
+						<a href="#">
+							<center><img src="img/index/神门.jpg"  class="grid"/> <br /><span class="font">神门</span>
+							</center>
+						</a>
+					</div>
+				</div>
+
+				<ul data-role="listview" id="listmode" style="display: none;">
+					<li>
+						<a href="read.html" data-ajax="false" data-transition="pop"><img src="img/index/圣墟.jpg" class="listimg"/>
+							<p class="title">圣墟</p>
+							<p class="cate">最新：第八百一十四章</p>
+							<p class="description">2017/12/14 23:52:43</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/我是至尊.jpg" class="listimg"/>
+							<p class="title">我是至尊</p>
+							<p class="cate">最新：第一百四十五章</p>
+							<p class="description">2017/12/14 23:36:54</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/不朽凡人.jpg" class="listimg"/>
+							<p class="title">不朽凡人</p>
+							<p class="cate">最新：第一二零三章</p>
+							<p class="description">2017/12/14 19:13:03</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/替天行盗.jpg" class="listimg"/>
+							<p class="title">替天行盗</p>
+							<p class="cate">第一百八十六章</p>
+							<p class="description">2017/12/13 22:54:14</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/一念永恒.jpg" class="listimg"/>
+							<p class="title">一念永恒</p>
+							<p class="cate">最新：第1208章</p>
+							<p class="description">2017/12/14 17:55:46</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/太古神王.jpg" class="listimg"/>
+							<p class="title">太古神王</p>
+							<p class="cate">最新：第2052章</p>
+							<p class="description">2017/10/31 21:47:04</p>
+						</a>
+					</li>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/天影.jpg" class="listimg"/>
+							<p class="title">天影</p>
+							<p class="cate">最新：第六百一十六章</p>
+							<p class="description">2017/12/14 16:38:48</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/剑灵同居日记.jpg" class="listimg"/>
+							<p class="title">剑灵同居日记</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/神门.jpg" class="listimg"/>
+							<p class="title">神门</p>
+							<p class="cate">第九百二十六章</p>
+							<p class="description">2017/12/14 23:44:29</p>
+						</a>
+					</li>
+				</ul>
+			</div><br /><br />
+			<div data-role="footer" data-position="fixed" data-id="ca-travel">
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

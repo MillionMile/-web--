@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>凤隐阁</title>
+
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/zyx_theme.min.css" />
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script>
+			$(function() {
+				htmlobj = $.ajax({
+					url: "tool.html",
+					async: false
+				});
+				$("[data-role='footer']").html(htmlobj.responseText);
+				$('[data-role="navbar"]').navbar();
+
+				$("#flip").change(function() {
+					if($(this).is(":checked")) {
+						$("#pwd").attr("type", "text");
+					} else {
+						$("#pwd").attr("type", "password");
+					}
+				});
+
+			});
+		</script>
+		<style type="text/css">
+			.logo {
+				width: 5em;
+				margin: 1em;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div data-role="page">
+			<div data-role="content">
+				<center><img src="img/me/头像.png" class="logo" /></center>
+
+				<form action="index.html" data-ajax="false">
+					<table width="100%">
+						<tr>
+							<td><label for="name">账号：</label></td>
+							<td><input type="text" name="name" id="name" placeholder="手机号/邮箱/凤隐阁账号" data-mini="true" data-inline="true"></td>
+						</tr>
+						<tr>
+							<td>
+								<label for="pwd">密码：</label></td>
+							<td><input type="password" name="pwd" id="pwd" placeholder="请输入密码"></td>
+						</tr>
+						<tr>
+							<td><label for="pwd">显示密码：</label></td>
+							<td><input type="checkbox" data-role="flipswitch" for="pwd" id="flip" data-on-text="可见" data-off-text="加密" /><br /></td>
+						</tr>
+					</table>
+					<center>
+						<a href="index.html" data-role="button" data-ajax="false" >登录</a>
+						<a href="register.html" data-role="button" data-ajax="false" name="register" id="register" >注册</a>
+					</center><br /><br />
+				</form>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="ca-travel">
+			</div>
+		</div>
+	</body>
+
+</html>

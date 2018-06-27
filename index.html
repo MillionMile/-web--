@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>凤隐阁</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css" />
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/zyx_theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mycss.css" />
+
+		<script type="text/javascript" src="slideBox/js/jquery.touchSwipe.min.js"></script>
+		<script type="text/javascript" src="slideBox/js/imagesloaded.min.js"></script>
+		<!-- jQuery Sangar Slider -->
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarBaseClass.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarSetupLayout.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarSizeAndScale.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarShift.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarSetupBulletNav.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarSetupNavigation.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarSetupSwipeTouch.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarSetupTimer.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarBeforeAfter.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarLock.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarResponsiveClass.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarResetSlider.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider/sangarTextbox.js"></script>
+		<script type="text/javascript" src="slideBox/js/sangarSlider.js"></script>
+		<link rel="stylesheet" href="slideBox/css/sangarSlider.css" type="text/css" media="all">
+		<link rel="stylesheet" href="slideBox/themes/default/default.css" type="text/css" media="all">
+		<link rel="stylesheet" href="slideBox/css/demo.css" type="text/css" media="all">
+
+		<style>
+			.listh {
+				margin: 2em 0 1em 1em;
+				font-weight: bold;
+				color: darkorange;
+			}
+			
+			.gengduo {
+				float: right;
+			}
+			
+			.toolimg {
+				width: 2.8em;
+				margin: 5px 0;
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(function() {
+				$('#sangar-example').sangarSlider({
+					timer: 100, // true or false to have the timer
+					width: 850, // slideshow width
+					height: 500 // slideshow height
+				});
+
+				htmlobj = $.ajax({
+					url: "tool.html",
+					async: false
+				});
+				$("[data-role='footer']").html(htmlobj.responseText);
+				$('[data-role="navbar"]').navbar();
+
+				meobj = $.ajax({
+					url: "me.html",
+					async: false
+				});
+				$("#me").html(meobj.responseText);
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<div data-role="page" id="index" data-theme="a">
+			<div data-role="header" data-position="fixed" data-id="ca-travel">
+				<a href="#me" data-role="button" data-icon="user" data-iconpos="notext"></a>
+				<center style="line-height: 45px;font-size: 1.2em;">凤隐阁</center>
+				<a href="search.html" class="btn ui-btn-right" data-icon="search" data-iconpos="notext">搜索</a>
+			</div>
+
+			<div data-role="panel" id="me"></div>
+
+			<div data-role="content" role="main" style="backgo">
+				<!--轮播-->
+				<div class="htmleaf-container">
+					<div class="htmleaf-content">
+						<div class='sangar-slideshow-container' id='sangar-example'>
+							<div class='sangar-content-wrapper'>
+								<div class='sangar-content'>
+									<img src='slideBox/img/丐世神医.jpg' />
+								</div>
+								<div class='sangar-content'>
+									<img src='slideBox/img/傲世高手混花都.jpg' />
+								</div>
+								<div class='sangar-content'>
+									<img src='slideBox/img/神脉.jpg' />
+								</div>
+								<div class='sangar-content'>
+									<img src='slideBox/img/剑王传说.jpg' />
+								</div>
+								<div class='sangar-content'>
+									<img src='slideBox/img/超自然大英雄.jpg' />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--/轮播-->
+				<div width="100%" style="background:white">
+					<div class="ui-grid-c" style="margin:1em 0 2.5em 0;">
+						<div class="ui-block-a">
+							<a href="#">
+								<center><img src="img/index/推荐.png" class="toolimg" /><br /><span class="font">推荐</span>
+								</center>
+							</a>
+						</div>
+						<div class="ui-block-b">
+							<a href="#">
+								<center><img src="img/index/收藏.png" class="toolimg" /><br /> <span class="font">收藏</span>
+								</center>
+							</a>
+						</div>
+						<div class="ui-block-c">
+							<a href="#">
+								<center><img src="img/index/热更.png" class="toolimg" /><br /> <span class="font">热更</span>
+								</center>
+							</a>
+						</div>
+						<div class="ui-block-d">
+							<a href="#">
+								<center><img src="img/index/完结.png" class="toolimg" /><br /> <span class="font">完结</span>
+								</center>
+							</a>
+						</div>
+					</div>
+				</div>
+				<ul data-role="listview">
+					<p data-role="listdivider" class="listh">男生爱看
+						<a href="#" class="gengduo">更多></a>
+					</p>
+					<li>
+						<div class="ui-grid-b" class="grid">
+							<div class="ui-block-a">
+								<a href="#">
+									<center>
+										<img src="img/index/圣墟.jpg" class="grid" /> <br /><span class="font">圣墟</span>
+									</center>
+								</a>
+							</div>
+							<div class="ui-block-b">
+								<a href="#">
+									<center><img src="img/index/一念永恒.jpg" class="grid" /> <br /><span class="font">一念永恒</span>
+									</center>
+								</a>
+							</div>
+							<div class="ui-block-c">
+								<a href="#">
+									<center><img src="img/index/太古神王.jpg" class="grid" /> <br /><span class="font">太古神王</span>
+									</center>
+								</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+				<ul data-role="listview">
+					<p data-role="listdivider" class="listh">火热新书
+						<a href="#" class="gengduo">更多></a>
+					</p>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/替天行盗.jpg" class="listimg" />
+							<p class="title">替天行盗</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/剑灵同居日记.jpg" class="listimg" />
+							<p class="title">剑灵同居日记</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/我是至尊.jpg" class="listimg" />
+							<p class="title">我是至尊</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+				</ul>
+				<ul data-role="listview">
+					<p data-role="listdivider" class="listh">热门连载
+						<a href="#" class="gengduo">更多></a>
+					</p>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/万界天尊.jpg" class="listimg" />
+							<p class="title">万界天尊</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/不朽凡人.jpg" class="listimg" />
+							<p class="title">不朽凡人</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/我真是大明星.jpg" class="listimg" />
+							<p class="title">我真是大明星</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+				</ul>
+				<ul data-role="listview">
+					<p data-role="listdivider" class="listh">重磅推荐
+						<a href="#" class="gengduo">更多></a>
+					</p>
+					<li>
+						<a href="#i" data-transition="pop"><img src="img/index/斗破苍穹.jpg" class="listimg" />
+							<p class="title">斗破苍穹</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="#ii"><img src="img/index/神门.jpg" class="listimg" />
+							<p class="title">神门</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+					<li>
+						<a href="#iii"><img src="img/index/天影.jpg" class="listimg" />
+							<p class="title">天影</p>
+							<p class="cate">玄幻奇幻 | 风凌天下</p>
+							<p class="description">时值乱世，群雄并起；烽烟处处，山河破碎。酒樽智囊云阳大难不死，潜心复仇；</p>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="ca-travel">
+			</div>
+		</div>
+	</body>
+
+</html>tml>
